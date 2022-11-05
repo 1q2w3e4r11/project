@@ -39,7 +39,9 @@ while True:
         while True:
             next_calculation = input("Let's do next calculation? (yes/no): ")
             if next_calculation in ('y', 'Y', 'yes', 'Yes', 'yEs', 'yeS', 'YEs', 'YeS', 'yES', 'YES','n', 'N', 'no', 'No', 'nO', 'NO'):
-                break
+                
+                break       
+                
             else :
                 print("Please re-enter.")
                 continue
@@ -53,7 +55,13 @@ while True:
         if next_calculation in ('y', 'Y', 'yes', 'Yes', 'yEs', 'yeS', 'YEs', 'YeS', 'yES', 'YES'):
             continue
         elif next_calculation in ('n', 'N', 'no', 'No', 'nO', 'NO') :
-            break
+            check = input("Are you sure? (yes/no): ")
+            if check in ('y', 'Y', 'yes', 'Yes', 'yEs', 'yeS', 'YEs', 'YeS', 'yES', 'YES'):
+                break
+            elif next_calculation in ('y', 'Y', 'yes', 'Yes', 'yEs', 'yeS', 'YEs', 'YeS', 'yES', 'YES'):
+                continue
+            continue
+      
     
     else:
         f = open("stdout2.txt", 'a')
