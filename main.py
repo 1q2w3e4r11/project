@@ -1,20 +1,7 @@
-# Program make a simple calculator
-# This function adds two numbers
-def add(x, y):
-    return x + y
-
-# This function subtracts two numbers
-def subtract(x, y):
-    return x - y
-
-
-# This function multiplies two numbers
-def multiply(x, y):
-    return x * y
-
-#Need to define divide function.
-def divide (x,y):
-    return x/y
+import add
+import Subtract
+import Multiply
+import Divide
 
 print("Calculator started.")
 
@@ -33,16 +20,17 @@ while True:
         
         
         if choice == '1':
-            print(num1, "+", num2, "=", add(num1, num2))
+            print(num1, "+", num2, "=", add.add(num1, num2))
 
         elif choice == '2':
-            print(num1, "-", num2, "=", subtract(num1, num2))
+            print(num1, "-", num2, "=", Subtract.subtract(num1, num2))
 
         elif choice == '3':
-            print(num1, "*", num2, "=", multiply(num1, num2))
+            print(num1, "*", num2, "=", Multiply.multiply(num1, num2))
             
         elif choice =='4':
-            print(num1, "/", num2, "=", divide(num1,num2))
+            print(num1, "/", num2, "=", Divide.divide(num1,num2))
+           
             
        
         # check if user wants another calculation
@@ -58,18 +46,19 @@ while True:
                 
         
         f = open("stdout.txt", 'a')
-        print(choice, file=f)
-        print(num1, file=f)
-        print(num2, file=f)
-        print(next_calculation, file=f)
+        print(choice, num1, num2, next_calculation,  file=f)
         f.close()
+  
         
-        
-    if next_calculation in ('y', 'Y', 'yes', 'Yes', 'yEs', 'yeS', 'YEs', 'YeS', 'yES', 'YES'):
-        continue
-    elif next_calculation in ('n', 'N', 'no', 'No', 'nO', 'NO') :
-        break
-
+        if next_calculation in ('y', 'Y', 'yes', 'Yes', 'yEs', 'yeS', 'YEs', 'YeS', 'yES', 'YES'):
+            continue
+        elif next_calculation in ('n', 'N', 'no', 'No', 'nO', 'NO') :
+            break
+    
+    else:
+        f = open("stdout2.txt", 'a')
+        print("Invalid input : ", choice,  file=f)
+        f.close()
    
 
 
