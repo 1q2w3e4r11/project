@@ -47,7 +47,15 @@ while True:
        
         # check if user wants another calculation
         # break the while loop if answer is no
-        next_calculation = input("Let's do next calculation? (yes/no): ")
+        
+        while True:
+            next_calculation = input("Let's do next calculation? (yes/no): ")
+            if next_calculation in ('y', 'Y', 'yes', 'Yes', 'yEs', 'yeS', 'YEs', 'YeS', 'yES', 'YES','n', 'N', 'no', 'No', 'nO', 'NO'):
+                break
+            else :
+                print("Please re-enter.")
+                continue
+                
         
         f = open("stdout.txt", 'a')
         print(choice, file=f)
